@@ -415,6 +415,7 @@ iframe,
 embed,
 object {
   display: block;
+  /* 1 */
 }
 
 /*
@@ -685,6 +686,10 @@ video {
 .w-max {
   width: -webkit-max-content;
   width: max-content;
+}
+
+.min-w-\[100px\] {
+  min-width: 100px;
 }
 
 .max-w-3xl {

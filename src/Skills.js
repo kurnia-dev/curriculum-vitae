@@ -65,7 +65,7 @@ export default function SkillsSection() {
             <h2 className='mb-6 uppercase font-semibold text-xl text-[#1e1b4b]'>Skills</h2>
             {Object.entries(SkillSet).map(([skillName, skillDescription], Index) => (
                 <div key={Index} className="grid grid-cols-[1fr_3fr] gap-5">
-                    <span className="flex gap-2 items-center justify-start text-xs font-semibold w-full my-auto text-lef ">
+                    <span className="flex gap-2 items-center justify-start text-xs font-semibold w-full my-auto text-lef min-w-[100px]">
                         <Icon aria-hidden='true' icon={skillName.substring(skillName.indexOf('|') + 1)} width={30} height={30}/>
                         {skillName.substring(0, skillName.indexOf('|'))}
                     </span>
