@@ -2,7 +2,7 @@ import pp from './pp.jpg'
 import Intro from './Intro'
 import Contact from './Contact'
 import Education from './Education'
-import Job_exp from './Job-exp'
+import JobExp from './Job-exp'
 import Skills from './Skills'
 
 
@@ -21,7 +21,7 @@ function App() {
         <Education />
       </div>
       <div className='border-solid border-t-[3px] border-[var(--accent-color)] flex flex-col gap-12 py-12'>
-        <Job_exp />
+        <JobExp />
         <Skills />
       </div>
     </main>
