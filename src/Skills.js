@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react';
+import userLang from './detectlang'
 
 const SkillSet = {
     'HTML5|vscode-icons:file-type-html': [
@@ -36,8 +37,16 @@ const SkillSet = {
         'Prototyping: https://shorturl.at/qxEH4', 
         'Slicing from Figma to Real Web/App.',
         'Etc.'
+    ], 
+    'Other Skill|fluent:window-dev-edit-20-regular': [
+        'ReactJs: Basic Usage' ,
+        'Tailwind: Basic Utility', 
+        'Git: Basic Usage', 
+        'SEO: Intermediate Level',
+        'English: Intermediate Level | Completed the TOEIC Test with the score 495'
     ]
 }
+
 
 function SkillDescription({ skillDescription }) {
     return (<>
@@ -62,11 +71,13 @@ function SkillDescription({ skillDescription }) {
 export default function SkillsSection() {
     return (
         <section id="skills" className="flex flex-col gap-5">
-            <h2 className='mb-6 uppercase font-semibold text-xl text-[#1e1b4b]'>Skills</h2>
+            <h2 className='mb-6 uppercase font-semibold text-xl text-[#1e1b4b]'>
+                {userLang == 'id' ? <>Keahlian</> : Object.keys(SkillSet).length > 1 ? <>Skills</> : <>Skill</>}
+            </h2>
             {Object.entries(SkillSet).map(([skillName, skillDescription], Index) => (
                 <div key={Index} className="grid grid-cols-[1fr_3fr] gap-5">
                     <span className="flex gap-2 items-center justify-start text-xs font-semibold w-full my-auto" style={{overflowWrap : 'anywhere'}}>
-                        <Icon aria-hidden='true' icon={skillName.substring(skillName.indexOf('|') + 1)} width={30} height={30}/>
+                        <Icon aria-hidden='true' icon={skillName.substring(skillName.indexOf('|') + 1)} width={30} height={30} color='var(--accent-color)'/>
                         {skillName.substring(0, skillName.indexOf('|'))}
                     </span>
                     <ul className="border-solid border-l-[3px] border-[var(--accent-color)] px-4 py-2 text-xs flex flex-col gap-2">

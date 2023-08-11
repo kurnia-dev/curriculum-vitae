@@ -8,4 +8,14 @@
         --accent-color: #00699d;
         --text-color: #1e1b4b;
     }
-  }
+
+
+    a {
+        @apply font-medium
+    }
+
+    .list {
+        @apply px-4 py-[6px] border-solid border-l-[3px] border-[var(--accent-color)] text-xs flex flex-col gap-[6px]
+    }
+
+}

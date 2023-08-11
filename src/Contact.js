@@ -1,4 +1,5 @@
-import {Icon} from '@iconify/react'
+import { Icon } from '@iconify/react'
+import userLang from './detectlang'
 
 
 const contactListObject = {
@@ -24,7 +25,9 @@ function ContactList() {
 export default function Contact() {
     return (
         <section id='contact'>
-            <h2 className='mb-6 uppercase font-semibold text-xl text-[#1e1b4b]'>contact</h2>
+            <h2 className='mb-6 uppercase font-semibold text-xl text-[#1e1b4b]'>
+                {userLang == 'id' ? <>Kontak</> : <>Contact</>}
+            </h2>
             <ContactList/>
         </section>
     )

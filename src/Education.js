@@ -1,3 +1,5 @@
+import userLang from './detectlang'
+
 const EducationList = {
     'major':  ['Teknik Komputer dan Jaringan'],
     'institution': ['SMK Tamtama Karanganyar'], 
@@ -28,7 +30,9 @@ function Education() {
 export default function EducationSection() {
     return (
         <section id="education">
-            <h2 className='mb-6 uppercase font-semibold text-xl text-[var(--text-color)]'>Education</h2>
+            <h2 className='mb-6 uppercase font-semibold text-xl text-[var(--text-color)]'>
+                {userLang == 'id' ? <>Pendidikan</> : <>Education</>}
+            </h2>
             <Education/>
         </section>
     )

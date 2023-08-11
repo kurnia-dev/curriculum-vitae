@@ -1,3 +1,5 @@
+import userLang from './detectlang'
+
 const JobsList = {
     1: {
         'title':  'Website Administrator and Content Writer',
@@ -10,11 +12,23 @@ const JobsList = {
     }, 
 }
 
+const DaftarJob = {
+    1: {
+        'title':  'Website Admin dan Penulis Artikel',
+        'company': 'CV. Sarana Integrasi Kebumen (Kebumen, Jawa Tengah)', 
+        'year': ['2021 - 2023'], 
+        'jobdesc': [
+            "Mengatur Template Wordpress.", 
+            "Membuat Artikel Komputer dan Teknologi IT. "
+        ]
+    }, 
+}
 
-function Jobs() {
+
+function Jobs() { 
     let list = []
     for (const i in JobsList) {
-            const job = JobsList[i]
+            const job = userLang == 'id' ? DaftarJob[i] : JobsList[i] 
             const jobDesc = job.jobdesc.map((item) => (
                 <li key={item}>{item}</li>    
             ))
@@ -42,7 +56,13 @@ function Jobs() {
 export default function JobsSection() {
     return (
         <section id="job-exp">
-            <h2 className='mb-8 uppercase font-semibold text-xl text-[#1e1b4b]'>Job Experience</h2>
+            <h2 className='mb-8 uppercase font-semibold text-xl text-[#1e1b4b]'>
+                {userLang == 'id'
+                    ? <>Pengalaman Kerja</>
+                    : Object.keys(JobsList).length > 1
+                        ? <>Job Experience</>
+                        : <>Job Experiences</>} 
+            </h2>
             <Jobs/>
         </section>
     )
